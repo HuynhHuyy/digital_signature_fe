@@ -1,0 +1,21 @@
+import { createApp } from "vue";
+import { useVuelidate } from "@vuelidate/core";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.js";
+import "bootstrap";
+import "jquery";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import router from "./router/index.js";
+import App from "./App.vue";
+import Toaster from "@meforma/vue-toaster";
+import store from "./store"
+import { VueSignaturePad } from "vue-signature-pad";
+import CKEditor from '@ckeditor/ckeditor5-vue';
+const app = createApp(App);
+app.component("VueSignaturePad", VueSignaturePad);
+app.use(CKEditor);
+app.use(Toaster);
+app.use(router);
+app.use(useVuelidate);
+app.use(store);
+app.mount("#app");
